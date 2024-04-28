@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ruyuan-eshop-fulfill
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        shared-configs:
+          - data-id: ruyuan-eshop-common-${spring.profiles.active}.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+        server-addr: 192.168.10.59:8848
+        file-extension: yaml

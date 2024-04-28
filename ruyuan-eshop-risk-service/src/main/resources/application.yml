@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: ruyuan-eshop-risk
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.59:8848
+        username: nacos
+        password: nacos
+
+server:
+  port: 8010
+
+dubbo:
+  scan:
+    base-packages: com.ruyuan.eshop.risk.api
+  registry:
+    address: spring-cloud://192.168.10.59
+  protocol:
+    name: dubbo
+    port: 28090
+  consumer:
+    check: false
+  provider:
+    threads: 800
+    actives: 200

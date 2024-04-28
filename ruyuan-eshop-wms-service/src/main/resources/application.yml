@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: ruyuan-eshop-wms
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.59:8848
+
+server:
+  port: 8008
+
+dubbo:
+  scan:
+    base-packages: com.ruyuan.eshop.wms.api
+  registry:
+    address: spring-cloud://192.168.10.59
+  protocol:
+    name: dubbo
+    port: 28088
+  consumer:
+    check: false
+  provider:
+    threads: 800
+    actives: 200

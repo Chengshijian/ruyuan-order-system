@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: ruyuan-eshop-customer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.59:8848
+        username: nacos
+        password: nacos
+  redis:
+    host: 192.168.10.59
+    port: 6379
+    password: Cloud@1234
+    timeout: 3000
+
+server:
+  port: 8011
+
+dubbo:
+  scan:
+    base-packages: com.ruyuan.eshop.customer.api
+  registry:
+    address: spring-cloud://192.168.10.59
+  protocol:
+    name: dubbo
+    port: 28091
+  consumer:
+    check: false
+  provider:
+    threads: 800
+    actives: 200

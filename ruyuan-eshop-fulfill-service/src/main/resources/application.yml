@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: ruyuan-eshop-fulfill
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.59:8848
+        username: nacos
+        password: nacos
+
+server:
+  port: 8007
+
+dubbo:
+  scan:
+    base-packages: com.ruyuan.eshop.fulfill.api
+  registry:
+    address: spring-cloud://192.168.10.59
+  protocol:
+    name: dubbo
+    port: 28087
+  consumer:
+    check: false
+  provider:
+    threads: 800
+    actives: 200
+
+
+rocketmq:
+  name-server: 192.168.10.59:9876
